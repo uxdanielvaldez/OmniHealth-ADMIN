@@ -1,0 +1,7 @@
+GET https://uj331li7y7.execute-api.us-east-1.amazonaws.com/A001/ciudadanos/entidades/3014/empresas-por-datos-generales
+Content-Type: application/json
+
+{
+    "username": "hola@oliverrincon.com",
+    "password": "Test123456"
+}
