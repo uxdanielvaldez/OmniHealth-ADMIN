@@ -21,7 +21,7 @@
             <tr v-for="(item, index) in data" :key="item._id">
               <th scope="row">{{ index++ }}</th>
 
-              <td>1</td>
+              <td>{{ item.fechaDeRegistro }}</td>
               <td>{{ item.username }}</td>
               <td>{{ item.nombre }} {{ item.apellido }}</td>
               <td>{{ item.cedula }}</td>

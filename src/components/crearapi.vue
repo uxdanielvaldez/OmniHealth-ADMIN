@@ -85,7 +85,7 @@ export default {
           .then(res => {
               if(res.status == 200) {
                   Notiflix.Notify.Success("ACCESO CREADO CORRECTAMENTE")
-                  setTimeout(() => location.reload(), 3000)
+                  setTimeout(() => router.push('/api'), 3000)
               }
           }) .catch ((err) => {
               Notiflix.Notify.Failure(`SE HA PRESENTADO EL SIGUIENTE ERROR: ${err}`)

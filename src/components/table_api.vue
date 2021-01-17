@@ -12,25 +12,20 @@
           <thead>
             <tr>
               <th scope="col">ID</th>
+              <th scope="col">Fecha</th>
               <th scope="col">Nombre de Usuario</th>
-              <th scope="col">Nombre Completo</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Manage</th>
+              <th scope="col">API</th>
+              <th scope="col">Referencia</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(item, index) in data" :key="item._id">
               <th scope="row">{{ index++ }}</th>
+              <td>{{ item.fecha }}</td>
               <td>{{ item.username }}</td>
-              <td>{{ item.nombre }} {{ item.apellido }}</td>
-              <td>{{ item.estado }}</td>
+              <td>{{ item.api }}</td>
               <td>
-                <button
-                  style="border:none; background:transparent;"
-                  @click="deleteUser(item._id)"
-                >
-                  <i class="fas fa-user-times"></i>
-                </button>
+                {{ item.referencia }}
               </td>
             </tr>
           </tbody>
@@ -59,21 +54,21 @@ export default {
     },
     viewData() {
       axios
-      .get('https://api.omnihealth.com.do/api/user-meeting')
+      .get('https://api.omnihealth.com.do/api/log_meeting')
       .then(res => {
         this.data = res.data
       })
     },
-    deleteUser(id) {
-      axios
-      .delete(`https://api.omnihealth.com.do/api/user-meeting/${id}`)
-      .then(res => {
-        if(res.status == 200) {
-          Notiflix.Notify.Success("ELIMINADO CORRECTAMENTE")
-          setTimeout(() => location.reload(), 3000)
-        }
-      })
-    }
+    // deleteUser(id) {
+    //   axios
+    //   .delete(`https://api.omnihealth.com.do/api/user-meeting/${id}`)
+    //   .then(res => {
+    //     if(res.status == 200) {
+    //       Notiflix.Notify.Success("ELIMINADO CORRECTAMENTE")
+    //       setTimeout(() => location.reload(), 3000)
+    //     }
+    //   })
+    // }
   },
 };
 </script>
